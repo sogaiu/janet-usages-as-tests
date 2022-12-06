@@ -40,7 +40,7 @@
     ``)
 
   (let [[zloc l r]
-        (find-test-indicator (-> (l/ast src)
+        (find-test-indicator (-> (l/par src)
                                  j/zip-down))]
     (and zloc
          (empty? l)
@@ -56,7 +56,7 @@
     ``)
 
   (let [[zloc l r]
-        (find-test-indicator (-> (l/ast src)
+        (find-test-indicator (-> (l/par src)
                                  j/zip-down))]
     (and zloc
          (= "before" l)
@@ -72,7 +72,7 @@
     ``)
 
   (let [[zloc l r]
-        (find-test-indicator (-> (l/ast src)
+        (find-test-indicator (-> (l/par src)
                                  j/zip-down))]
     (and zloc
          (empty? l)
@@ -136,7 +136,7 @@
     ``)
 
   (def [ti-zloc _ _]
-    (find-test-indicator (-> (l/ast src)
+    (find-test-indicator (-> (l/par src)
                              j/zip-down
                              j/down)))
 
@@ -233,7 +233,7 @@
     ``)
 
   (def [ti-zloc _ _]
-    (find-test-indicator (-> (l/ast src)
+    (find-test-indicator (-> (l/par src)
                              j/zip-down
                              j/down)))
 
@@ -270,7 +270,7 @@
     ``)
 
   (def [ti-zloc _ _]
-    (find-test-indicator (-> (l/ast src)
+    (find-test-indicator (-> (l/par src)
                              j/zip-down
                              j/down)))
 
@@ -419,11 +419,11 @@
       )
     ``)
 
-  (-> (l/ast src)
+  (-> (l/par src)
       j/zip-down
       rewrite-comment-zloc
       j/root
-      l/code)
+      l/gen)
   # =>
   (string "("                            "\n"
           "\n"
@@ -446,11 +446,11 @@
 
 (defn rewrite-comment-block
   [comment-src]
-  (-> (l/ast comment-src)
+  (-> (l/par comment-src)
       j/zip-down
       rewrite-comment-zloc
       j/root
-      l/code))
+      l/gen))
 
 (comment
 
@@ -496,7 +496,7 @@
   [src]
   (var changed nil)
   (var curr-zloc
-    (-> (l/ast src)
+    (-> (l/par src)
         j/zip-down
         # XXX: leading newline is a hack to prevent very first thing
         #      from being a comment block
@@ -523,7 +523,7 @@
   (when changed
     (-> curr-zloc
         j/root
-        l/code)))
+        l/gen)))
 
 (comment
 

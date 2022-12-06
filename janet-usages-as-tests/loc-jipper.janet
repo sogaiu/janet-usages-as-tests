@@ -95,7 +95,7 @@
 
   (import ./location :as l)
 
-  (-> (l/ast "(+ 1 3)")
+  (-> (l/par "(+ 1 3)")
       zip
       z/down
       attrs)
@@ -117,7 +117,7 @@
 
   #(import ./location :as l)
 
-  (-> (l/ast "(+ 1 3)")
+  (-> (l/par "(+ 1 3)")
       zip-down
       z/node)
   # =>
@@ -161,7 +161,7 @@
 
   #(import ./location :as l)
 
-  (-> (l/ast
+  (-> (l/par
         ``
         (# hi there
         + 1 2)
@@ -173,7 +173,7 @@
   # =>
   [:symbol @{:bc 1 :bl 2 :ec 2 :el 2} "+"]
 
-  (-> (l/ast "(:a)")
+  (-> (l/par "(:a)")
       zip-down
       z/down
       right-skip-wsc)
@@ -206,7 +206,7 @@
 
   #(import ./location :as l)
 
-  (-> (l/ast
+  (-> (l/par
         ``
         (# hi there
         + 1 2)
@@ -220,7 +220,7 @@
   # =>
   [:symbol @{:bc 1 :bl 2 :ec 2 :el 2} "+"]
 
-  (-> (l/ast "(:a)")
+  (-> (l/par "(:a)")
       zip-down
       z/down
       left-skip-wsc)
