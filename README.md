@@ -13,6 +13,7 @@ basic idea is the same once things are setup.
 The following repositories use `janet-usages-as-tests`:
 
 * [jandent](https://github.com/sogaiu/jandent)
+* [janet-aliases](https://github.com/sogaiu/janet-aliases)
 * [janet-bits](https://github.com/sogaiu/janet-bits)
 * [janet-editor-elf](https://github.com/sogaiu/janet-editor-elf)
 * [janet-peg](https://github.com/sogaiu/janet-peg)
