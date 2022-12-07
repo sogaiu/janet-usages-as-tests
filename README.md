@@ -48,6 +48,8 @@ janet test.janet
    directory of the target project.
 3. Edit `test.janet` to specify files and/or directories that are the
    target of usages to be treated as tests.
+4. Optionally rename `test.janet` as desired.  (I tend to use
+   `make-and-run-juat-tests.janet`.)
 
 Note, most sample repositories listed above (except for
 `jaylib-wasm-demo`) used this method of setup.
@@ -62,6 +64,8 @@ Note, most sample repositories listed above (except for
    directory of the target project.
 3. Edit `test.janet` to specify files and/or directories that are the
    target of usages to be treated as tests.
+4. Optionally rename `test.janet` as desired.  (I tend to use
+   `make-and-run-juat-tests.janet`.)
 
 ## Writing Tests
 
