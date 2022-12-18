@@ -17,6 +17,7 @@ The following repositories use `janet-usages-as-tests`:
 * [janet-bits](https://github.com/sogaiu/janet-bits)
 * [janet-editor-elf](https://github.com/sogaiu/janet-editor-elf)
 * [janet-peg](https://github.com/sogaiu/janet-peg)
+* [janet-tree-sitter](https://github.com/sogaiu/janet-tree-sitter)
 * [janet-xmlish](https://github.com/sogaiu/janet-xmlish)
 * [janet-zipper](https://github.com/sogaiu/janet-zipper)
 * [jaylib-wasm-demo](https://github.com/sogaiu/jaylib-wasm-demo)
