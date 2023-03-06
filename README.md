@@ -37,21 +37,23 @@ up to be tested in that manner.
 
 Instead, to test the code in this repository, invoke:
 ```
-janet test.janet
+janet make-and-run-juat-tests.janet
 ```
 
 ## Setup and Configuration
 
+There are a few ways `janet-usages-as-tests` can be used with some
+target project.
+
 ### Basic
 
-1. Clone or copy this repository [1] as a subdirectory of a target
-   project.
-2. Copy or move the included `test.janet` file into the `test`
-   directory of the target project.
-3. Edit `test.janet` to specify files and/or directories that are the
-   target of usages to be treated as tests.
-4. Optionally rename `test.janet` as desired.  (I tend to use
-   `make-and-run-juat-tests.janet`.)
+0. Clone this repository somewhere.
+1. Copy just the subdirectory named `janet-usages-as-tests` of the
+   cloned repository as a subdirectory of a target project.
+2. Copy or move the included `make-and-run-juat-tests.janet` file into
+   the `test` directory of the target project.
+3. Edit `make-and-run-juat-tests.janet` to specify files and/or
+   directories that are the target of usages to be treated as tests.
 
 Note, most sample repositories listed above (except for
 `jaylib-wasm-demo`) used this method of setup.
@@ -62,12 +64,11 @@ Note, most sample repositories listed above (except for
    target project.  See
    [jaylib-wasm-demo](https://github.com/sogaiu/jaylib-wasm-demo) for
    an example that does this.
-2. Copy or move the included `test.janet` file into the `test`
-   directory of the target project.
-3. Edit `test.janet` to specify files and/or directories that are the
-   target of usages to be treated as tests.
-4. Optionally rename `test.janet` as desired.  (I tend to use
-   `make-and-run-juat-tests.janet`.)
+2. Copy or move the included `make-and-run-juat-tests-submodule.janet`
+   file into the `test` directory of the target project.
+3. Edit `make-and-run-juat-tests-submodule.janet` to specify
+   files and/or directories that are the target of usages to be
+   treated as tests.
 
 ## Writing Tests
 
@@ -100,8 +101,3 @@ See [Usage / Test Writing Tips](./doc/tips.md) for more details.
 * Saikyun - discussion and testing
 * srnb@gitlab - suggestion
 
-## Footnotes
-
-[1] Copying just the subdirectory named `janet-usages-as-tests` of
-this repository can be made to work too.  This is what I've been doing
-mostly these days.
