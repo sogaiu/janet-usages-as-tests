@@ -43,7 +43,7 @@ janet test.janet
 
 ### Basic
 
-1. Clone or copy this repository as a subdirectory of a target
+1. Clone or copy this repository [1] as a subdirectory of a target
    project.
 2. Copy or move the included `test.janet` file into the `test`
    directory of the target project.
@@ -99,3 +99,8 @@ See [Usage / Test Writing Tips](./doc/tips.md) for more details.
 * Saikyun - discussion and testing
 * srnb@gitlab - suggestion
 
+## Footnotes
+
+[1] Copying just the subdirectory named `janet-usages-as-tests` of
+this repository can be made to work too.  This is what I've been doing
+mostly these days.
