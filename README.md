@@ -45,20 +45,32 @@ basic idea is the same once things are setup.
 
 The following repositories use `janet-usages-as-tests`:
 
-* [clojure-peg](https://github.com/sogaiu/clojure-peg)
-* [index-janet-source](https://github.com/sogaiu/index-janet-source)
-* [jandent](https://github.com/sogaiu/jandent)
-* [janet-aliases](https://github.com/sogaiu/janet-aliases)
-* [janet-bits](https://github.com/sogaiu/janet-bits)
-* [janet-editor-elf](https://github.com/sogaiu/janet-editor-elf)
-* [janet-peg](https://github.com/sogaiu/janet-peg)
-* [janet-tree-sitter](https://github.com/sogaiu/janet-tree-sitter)
-* [janet-ts-dsl](https://github.com/sogaiu/janet-ts-dsl)
-* [janet-walk-dir](https://github.com/sogaiu/janet-walk-dir)
-* [janet-xmlish](https://github.com/sogaiu/janet-xmlish)
-* [janet-zipper](https://github.com/sogaiu/janet-zipper)
-* [jaylib-wasm-demo](https://github.com/sogaiu/jaylib-wasm-demo)
-* [margaret](https://github.com/sogaiu/margaret)
+* [clojure-peg](https://github.com/sogaiu/clojure-peg "Parse and
+  Generate Clojure Source")
+* [index-janet-source](https://github.com/sogaiu/index-janet-source
+  "Index Janet Source Code")
+* [jandent](https://github.com/sogaiu/jandent "Janet Indenter")
+* [janet-aliases](https://github.com/sogaiu/janet-aliases "Janet
+  Source Aliases Reporter")
+* [janet-bits](https://github.com/sogaiu/janet-bits "IEEE 754 Exploration")
+* [janet-editor-elf](https://github.com/sogaiu/janet-editor-elf
+  "Helpful Bits for Janet Support in Editors ")
+* [janet-peg](https://github.com/sogaiu/janet-peg "Parse and Generate
+  Janet Source Code")
+* [janet-tree-sitter](https://github.com/sogaiu/janet-tree-sitter
+  "Janet bindings for tree-sitter ")
+* [janet-ts-dsl](https://github.com/sogaiu/janet-ts-dsl "Alternate
+  DSLs for tree-sitter Grammars")
+* [janet-walk-dir](https://github.com/sogaiu/janet-walk-dir "Walking
+  Directory Trees")
+* [janet-xmlish](https://github.com/sogaiu/janet-xmlish "Hack to Work
+  with Some Amount of XML")
+* [janet-zipper](https://github.com/sogaiu/janet-zipper "Zippers in
+  Janet")
+* [jaylib-wasm-demo](https://github.com/sogaiu/jaylib-wasm-demo "Demo
+  of using jaylib in a web browser ")
+* [margaret](https://github.com/sogaiu/margaret "A Janet
+  implementation of Janet’s peg/match")
 
 ## Running Tests
 
