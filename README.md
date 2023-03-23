@@ -45,6 +45,8 @@ basic idea is the same once things are setup.
 
 The following repositories use `janet-usages-as-tests`:
 
+* [babashka-tasks-view](https://github.com/sogaiu/babashka-tasks-view
+  "View Babashka tasks by tag")
 * [clojure-peg](https://github.com/sogaiu/clojure-peg "Parse and
   Generate Clojure Source")
 * [index-janet-source](https://github.com/sogaiu/index-janet-source
@@ -68,7 +70,9 @@ The following repositories use `janet-usages-as-tests`:
 * [janet-zipper](https://github.com/sogaiu/janet-zipper "Zippers in
   Janet")
 * [jaylib-wasm-demo](https://github.com/sogaiu/jaylib-wasm-demo "Demo
-  of using jaylib in a web browser ")
+  of using jaylib in a web browser")
+* [jpm-tasks-view](https://github.com/sogaiu/jpm-tasks-view
+  "View jpm tasks by tag")
 * [margaret](https://github.com/sogaiu/margaret "A Janet
   implementation of Janet’s peg/match")
 
