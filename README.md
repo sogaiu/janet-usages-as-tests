@@ -45,6 +45,8 @@ basic idea is the same once things are setup.
 
 The following repositories use `janet-usages-as-tests`:
 
+* [ajrepl](https://github.com/sogaiu/ajrepl "Emacs Support for Janet
+  REPL Interaction")
 * [babashka-tasks-view](https://github.com/sogaiu/babashka-tasks-view
   "View Babashka tasks by tag")
 * [clojure-peg](https://github.com/sogaiu/clojure-peg "Parse and
