@@ -63,6 +63,8 @@ The following repositories use `janet-usages-as-tests`:
   Janet Source Code")
 * [janet-pegdoc](https://github.com/sogaiu/janet-pegdoc "Janet PEG
   special doc tool")
+* [janet-ref](https://github.com/sogaiu/janet-ref "Janet Reference
+   Tool")
 * [janet-tree-sitter](https://github.com/sogaiu/janet-tree-sitter
   "Janet bindings for tree-sitter ")
 * [janet-ts-dsl](https://github.com/sogaiu/janet-ts-dsl "Alternate
