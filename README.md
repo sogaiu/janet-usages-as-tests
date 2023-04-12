@@ -43,7 +43,8 @@ basic idea is the same once things are setup.
 
 ## Sample Repositories
 
-The following repositories use `janet-usages-as-tests`:
+The following repositories use `janet-usages-as-tests` (hover for
+descriptions):
 
 * [ajrepl](https://github.com/sogaiu/ajrepl "Emacs Support for Janet
   REPL Interaction")
