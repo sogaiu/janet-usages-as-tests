@@ -816,16 +816,21 @@
   [src]
   (when (not (empty? src))
     (when-let [rewritten (rewrite src)]
+      # XXX: hack - not sure if robust enough
+      (def eol-str
+        (if (= :windows (os/which))
+          "\r\n"
+          "\n"))
       (string verify-as-string
-              "\n"
+              eol-str
               "(_verify/start-tests)"
-              "\n"
+              eol-str
               rewritten
-              "\n"
+              eol-str
               "(_verify/end-tests)"
-              "\n"
+              eol-str
               "(_verify/report)"
-              "\n"))))
+              eol-str))))
 
 # no tests so won't be executed
 (comment
