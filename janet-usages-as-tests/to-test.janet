@@ -339,9 +339,14 @@
 
 (defn wrap-as-test-call
   [start-zloc end-zloc test-label]
+  # XXX: hack - not sure if robust enough
+  (def eol-str
+    (if (= :windows (os/which))
+      "\r\n"
+      "\n"))
   (-> (j/wrap start-zloc [:tuple @{}] end-zloc)
       # newline important for preserving long strings
-      (j/insert-child [:whitespace @{} "\n"])
+      (j/insert-child [:whitespace @{} eol-str])
       # name of test macro
       (j/insert-child [:symbol @{} "_verify/is"])
       # for column zero convention, insert leading whitespace
@@ -486,12 +491,17 @@
 (defn rewrite
   [src]
   (var changed nil)
+  # XXX: hack - not sure if robust enough
+  (def eol-str
+    (if (= :windows (os/which))
+      "\r\n"
+      "\n"))
   (var curr-zloc
     (-> (l/par src)
         j/zip-down
         # XXX: leading newline is a hack to prevent very first thing
         #      from being a comment block
-        (j/insert-left [:whitespace @{} "\n"])
+        (j/insert-left [:whitespace @{} eol-str])
         # XXX: once the newline is inserted, need to move to it
         j/left))
   #
