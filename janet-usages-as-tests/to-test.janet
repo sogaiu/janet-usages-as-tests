@@ -199,10 +199,14 @@
     (and found-after
          (match (j/node (first after-zlocs))
            [:whitespace _ "\n"]
+           true
+           [:whitespace _ "\r\n"]
            true))
     (if-let [from-next-line (drop 1 after-zlocs)
              next-line (take-until |(match (j/node $)
                                       [:whitespace _ "\n"]
+                                      true
+                                      [:whitespace _ "\r\n"]
                                       true)
                                    from-next-line)
              target (->> next-line
