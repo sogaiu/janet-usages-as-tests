@@ -390,7 +390,7 @@
     (-> curr-zloc
         j/up
         j/down
-        (j/replace [:whitespace @{} "\n"])
+        (j/replace [:whitespace @{} " "])
         # begin hack to prevent trailing whitespace once unwrapping occurs
         j/rightmost
         (j/insert-right [:keyword @{} ":smile"])
@@ -420,8 +420,7 @@
       j/root
       l/gen)
   # =>
-  (string "("                           eol
-                                        eol
+  (string "( "                          eol
                                         eol
           "  (def a 1)"                 eol
                                         eol
@@ -466,8 +465,7 @@
 
   (rewrite-comment-block src)
   # =>
-  (string "("                            eol
-                                         eol
+  (string "( "                           eol
                                          eol
           "  (def a 1)"                  eol
                                          eol
@@ -571,8 +569,7 @@
           "  [x]"                eol
           "  (+ x 1))"           eol
                                  eol
-                                 eol
-                                 eol
+          " "                    eol
                                  eol
           "  (def a 1)"          eol
                                  eol
@@ -592,8 +589,7 @@
           "  [y]"                eol
           "  (* y y))"           eol
                                  eol
-                                 eol
-                                 eol
+          " "                    eol
                                  eol
           "  (_verify/is"        eol
           "  (your-fn 3)"        eol
@@ -639,8 +635,7 @@
   (rewrite src)
   # =>
   (string                   eol
-                            eol
-                            eol
+          " "               eol
                             eol
           "  (_verify/is"   eol
           "  (-> ``"        eol
