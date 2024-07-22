@@ -48,28 +48,15 @@ descriptions):
 
 * [ajrepl](https://github.com/sogaiu/ajrepl "Emacs Support for Janet
   REPL Interaction")
-* [babashka-tasks-view](https://github.com/sogaiu/babashka-tasks-view
-  "View Babashka tasks by tag")
-* [clojure-peg](https://github.com/sogaiu/clojure-peg "Parse and
-  Generate Clojure Source")
 * [index-janet-source](https://github.com/sogaiu/index-janet-source
   "Index Janet Source Code")
 * [jandent](https://github.com/sogaiu/jandent "Janet Indenter")
-* [janet-aliases](https://github.com/sogaiu/janet-aliases "Janet
-  Source Aliases Reporter")
-* [janet-bits](https://github.com/sogaiu/janet-bits "IEEE 754 Exploration")
-* [janet-editor-elf](https://github.com/sogaiu/janet-editor-elf
-  "Helpful Bits for Janet Support in Editors ")
 * [janet-peg](https://github.com/sogaiu/janet-peg "Parse and Generate
   Janet Source Code")
 * [janet-pegdoc](https://github.com/sogaiu/janet-pegdoc "Janet PEG
   special doc tool")
 * [janet-ref](https://github.com/sogaiu/janet-ref "Janet Reference
    Tool")
-* [janet-tree-sitter](https://github.com/sogaiu/janet-tree-sitter
-  "Janet bindings for tree-sitter ")
-* [janet-ts-dsl](https://github.com/sogaiu/janet-ts-dsl "Alternate
-  DSLs for tree-sitter Grammars")
 * [janet-walk-dir](https://github.com/sogaiu/janet-walk-dir "Walking
   Directory Trees")
 * [janet-xmlish](https://github.com/sogaiu/janet-xmlish "Hack to Work
@@ -82,6 +69,8 @@ descriptions):
   "View jpm tasks by tag")
 * [margaret](https://github.com/sogaiu/margaret "A Janet
   implementation of Janet’s peg/match")
+* [simple-peg-tracer](https://github.com/sogaiu/simple-peg-tracer
+  "Simple Janet PEG tracer")
 
 ## Running Tests
 
@@ -115,19 +104,41 @@ target project.
    directories that are the target of usages to be treated as tests.
 
 Note, most sample repositories listed above (except for
-`jaylib-wasm-demo`) used this method of setup.
+`jaylib-wasm-demo` and `simple-peg-tracer`) use this method of setup.
 
 ### Git Submodule
 
 1. In place of step 1 above, add this repository as a submodule of a
-   target project.  See
-   [jaylib-wasm-demo](https://github.com/sogaiu/jaylib-wasm-demo) for
-   an example that does this.
+   target project.
 2. Copy or move the included `make-and-run-juat-tests-submodule.janet`
    file into the `test` directory of the target project.
 3. Edit `make-and-run-juat-tests-submodule.janet` to specify
    files and/or directories that are the target of usages to be
    treated as tests.
+
+Note that
+[jaylib-wasm-demo](https://github.com/sogaiu/jaylib-wasm-demo) for an
+example that does this.
+
+### Git Subrepo
+
+0. Ensure [git-subrepo](https://github.com/ingydotnet/git-subrepo) is
+   installed.
+1. In the target project, use the `git subrepo clone` command to
+   clone `janet-usages-as-tests` to an appropriate subdirectory of
+   the target project.  For the sake of discussion below, let's
+   say this subdirectory is named `juat`.
+2. Copy `juat/make-and-run-juat-tests.janet` to the target project's
+   `test` subdirectory.  This file will run via `jpm test`.
+3. Edit the just copied `test/make-and-run-juat-tests.janet` file
+   so that it:
+     * uses `juat/janet-usages-as-tests/make-and-run-tests.janet`
+     * specifies files and/or directories that are the target of
+       usages to be treated as tests
+
+Note that
+[simple-peg-tracer](https://github.com/sogaiu/simple-peg-tracer) is
+an example of using this method.
 
 ## Writing Tests
 
