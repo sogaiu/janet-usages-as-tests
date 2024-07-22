@@ -41,37 +41,6 @@ What if these pairs of things could also be used as tests?
 [usages-as-tests](https://github.com/sogaiu/usages-as-tests).  The
 basic idea is the same once things are setup.
 
-## Sample Repositories
-
-The following repositories use `janet-usages-as-tests` (hover for
-descriptions):
-
-* [ajrepl](https://github.com/sogaiu/ajrepl "Emacs Support for Janet
-  REPL Interaction")
-* [index-janet-source](https://github.com/sogaiu/index-janet-source
-  "Index Janet Source Code")
-* [jandent](https://github.com/sogaiu/jandent "Janet Indenter")
-* [janet-peg](https://github.com/sogaiu/janet-peg "Parse and Generate
-  Janet Source Code")
-* [janet-pegdoc](https://github.com/sogaiu/janet-pegdoc "Janet PEG
-  special doc tool")
-* [janet-ref](https://github.com/sogaiu/janet-ref "Janet Reference
-   Tool")
-* [janet-walk-dir](https://github.com/sogaiu/janet-walk-dir "Walking
-  Directory Trees")
-* [janet-xmlish](https://github.com/sogaiu/janet-xmlish "Hack to Work
-  with Some Amount of XML")
-* [janet-zipper](https://github.com/sogaiu/janet-zipper "Zippers in
-  Janet")
-* [jaylib-wasm-demo](https://github.com/sogaiu/jaylib-wasm-demo "Demo
-  of using jaylib in a web browser")
-* [jpm-tasks-view](https://github.com/sogaiu/jpm-tasks-view
-  "View jpm tasks by tag")
-* [margaret](https://github.com/sogaiu/margaret "A Janet
-  implementation of Janet’s peg/match")
-* [simple-peg-tracer](https://github.com/sogaiu/simple-peg-tracer
-  "Simple Janet PEG tracer")
-
 ## Running Tests
 
 ### Repositories Using janet-usages-as-tests
@@ -106,8 +75,29 @@ target project.
 3. Edit `make-and-run-juat-tests.janet` to specify files and/or
    directories that are the target of usages to be treated as tests.
 
-Note, most sample repositories listed above (except for
-`jaylib-wasm-demo` and `simple-peg-tracer`) use this method of setup.
+Some repositories that use this method include:
+
+* [ajrepl](https://github.com/sogaiu/ajrepl "Emacs Support for Janet
+  REPL Interaction")
+* [index-janet-source](https://github.com/sogaiu/index-janet-source
+  "Index Janet Source Code")
+* [jandent](https://github.com/sogaiu/jandent "Janet Indenter")
+* [janet-peg](https://github.com/sogaiu/janet-peg "Parse and Generate
+  Janet Source Code")
+* [janet-pegdoc](https://github.com/sogaiu/janet-pegdoc "Janet PEG
+  special doc tool")
+* [janet-ref](https://github.com/sogaiu/janet-ref "Janet Reference
+   Tool")
+* [janet-walk-dir](https://github.com/sogaiu/janet-walk-dir "Walking
+  Directory Trees")
+* [janet-xmlish](https://github.com/sogaiu/janet-xmlish "Hack to Work
+  with Some Amount of XML")
+* [janet-zipper](https://github.com/sogaiu/janet-zipper "Zippers in
+  Janet")
+* [jpm-tasks-view](https://github.com/sogaiu/jpm-tasks-view
+  "View jpm tasks by tag")
+* [margaret](https://github.com/sogaiu/margaret "A Janet
+  implementation of Janet’s peg/match")
 
 ### Git Subrepo
 
@@ -130,9 +120,11 @@ Note, most sample repositories listed above (except for
      * specifies files and/or directories that are the target of
        usages to be treated as tests
 
-Note that
-[simple-peg-tracer](https://github.com/sogaiu/simple-peg-tracer) is
-an example of using this method.
+Some repositories that use this method include:
+
+* [janet-totp](https://github.com/sogaiu/janet-totp "TOTP in Janet")
+* [simple-peg-tracer](https://github.com/sogaiu/simple-peg-tracer
+  "Simple Janet PEG tracer")
 
 [*] If you chose a subdirectory name other than `juat`, the path will
 likely need to be edited to match.
@@ -150,8 +142,8 @@ likely need to be edited to match.
    tests.
 
 Note that
-[jaylib-wasm-demo](https://github.com/sogaiu/jaylib-wasm-demo) for an
-example that does this.
+[jaylib-wasm-demo](https://github.com/sogaiu/jaylib-wasm-demo) is a
+repository that uses this approach.
 
 ## Writing Tests
 
