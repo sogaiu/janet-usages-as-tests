@@ -93,52 +93,65 @@ janet make-and-run-juat-tests.janet
 There are a few ways `janet-usages-as-tests` can be used with some
 target project.
 
-### Basic
+### Copying In-Place
 
 0. Clone this repository somewhere.
+
 1. Copy just the subdirectory named `janet-usages-as-tests` of the
    cloned repository as a subdirectory of a target project.
+
 2. Copy or move the included `make-and-run-juat-tests.janet` file into
    the `test` directory of the target project.
+
 3. Edit `make-and-run-juat-tests.janet` to specify files and/or
    directories that are the target of usages to be treated as tests.
 
 Note, most sample repositories listed above (except for
 `jaylib-wasm-demo` and `simple-peg-tracer`) use this method of setup.
 
-### Git Submodule
-
-1. In place of step 1 above, add this repository as a submodule of a
-   target project.
-2. Copy or move the included `make-and-run-juat-tests-submodule.janet`
-   file into the `test` directory of the target project.
-3. Edit `make-and-run-juat-tests-submodule.janet` to specify
-   files and/or directories that are the target of usages to be
-   treated as tests.
-
-Note that
-[jaylib-wasm-demo](https://github.com/sogaiu/jaylib-wasm-demo) for an
-example that does this.
-
 ### Git Subrepo
 
 0. Ensure [git-subrepo](https://github.com/ingydotnet/git-subrepo) is
    installed.
+
 1. In the target project, use the `git subrepo clone` command to
    clone `janet-usages-as-tests` to an appropriate subdirectory of
    the target project.  For the sake of discussion below, let's
    say this subdirectory is named `juat`.
-2. Copy `juat/make-and-run-juat-tests.janet` to the target project's
-   `test` subdirectory.  This file will run via `jpm test`.
-3. Edit the just copied `test/make-and-run-juat-tests.janet` file
-   so that it:
-     * uses `juat/janet-usages-as-tests/make-and-run-tests.janet`
+
+2. Copy `juat/make-and-run-juat-tests-subrepo.janet` to the target
+   project's `test` subdirectory.  This file will run via `jpm test`.
+
+3. Edit the just copied `test/make-and-run-juat-tests-subrepo.janet`
+   file so that it:
+
+     * uses `juat/janet-usages-as-tests/make-and-run-tests.janet` [*]
+
      * specifies files and/or directories that are the target of
        usages to be treated as tests
 
 Note that
 [simple-peg-tracer](https://github.com/sogaiu/simple-peg-tracer) is
 an example of using this method.
+
+[*] If you chose a subdirectory name other than `juat`, the path will
+likely need to be edited to match.
+
+### Git Submodule
+
+1. In place of step 1 above, add this repository as a submodule of a
+   target project.
+
+2. Copy or move the included `make-and-run-juat-tests-submodule.janet`
+   file into the `test` directory of the target project.
+
+3. Edit `make-and-run-juat-tests-submodule.janet` to specify files
+   and/or directories that are the target of usages to be treated as
+   tests.
+
+Note that
+[jaylib-wasm-demo](https://github.com/sogaiu/jaylib-wasm-demo) for an
+example that does this.
 
 ## Writing Tests
 
