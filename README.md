@@ -105,6 +105,8 @@ Some repositories that use this method include:
 * [janet-punyishcode](https://github.com/sogaiu/janet-totp "Punycode
   decoding / encoding in Janet")
 * [janet-totp](https://github.com/sogaiu/janet-totp "TOTP in Janet")
+* [janet-zipper](https://github.com/sogaiu/janet-zipper "Zippers in
+  Janet")
 * [simple-peg-tracer](https://github.com/sogaiu/simple-peg-tracer
   "Simple Janet PEG tracer")
 
@@ -141,8 +143,6 @@ Some repositories that use this method include:
   Directory Trees")
 * [janet-xmlish](https://github.com/sogaiu/janet-xmlish "Hack to Work
   with Some Amount of XML")
-* [janet-zipper](https://github.com/sogaiu/janet-zipper "Zippers in
-  Janet")
 * [jpm-tasks-view](https://github.com/sogaiu/jpm-tasks-view
   "View jpm tasks by tag")
 * [margaret](https://github.com/sogaiu/margaret "A Janet
