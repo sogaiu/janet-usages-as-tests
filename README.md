@@ -85,6 +85,10 @@ target project.
 
 Some repositories that use this method include:
 
+* [janet-jsonish](https://github.com/sogaiu/janet-totp "JSON <-> JDN
+  Converter in Pure Janet")
+* [janet-punyishcode](https://github.com/sogaiu/janet-totp "Punycode
+  decoding / encoding in Janet")
 * [janet-totp](https://github.com/sogaiu/janet-totp "TOTP in Janet")
 * [simple-peg-tracer](https://github.com/sogaiu/simple-peg-tracer
   "Simple Janet PEG tracer")
