@@ -62,6 +62,21 @@ janet make-and-run-juat-tests.janet
 There are a few ways `janet-usages-as-tests` can be used with some
 target project.
 
+The basic idea in each case is to put an appropriate `.janet` file in
+the `test` subdirectory of the target project so that it is executed
+when `jpm test` is invoked.
+
+The aforementioned `.janet` file is a launching script for code in
+`janet-usages-as-tests` and should also be edited to contain names of
+files and directories in which to search for usages to convert into
+tests.
+
+Some directories are skipped in this process of searching for usages
+(to turn into tests), including:
+
+* `.git` directories
+* directories containing a file named `.gitrepo`
+
 ### Git Subrepo
 
 0. Ensure [git-subrepo](https://github.com/ingydotnet/git-subrepo) is
