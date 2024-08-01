@@ -163,6 +163,65 @@
 
   )
 
+# XXX: there is no perfection...but better than nothing
+#      could run against a lot of collected code to see how it fares...
+(defn looks-like-janet
+  [file-path]
+  (when (string/has-suffix? ".janet" file-path)
+    (break true))
+  #
+  (defn check-line
+    [line]
+    (or (string/find "(import" line)
+        (string/find "(use" line)))
+  #
+  (with [cf (file/open file-path :r)]
+    (def result (file/read cf :line))
+    (when (not result)
+      (break false))
+    # shebang check 1
+    (def first-line (string/trim result))
+    (when (and (string/has-prefix? "#!" first-line)
+               (string/has-suffix? "janet" first-line))
+      (break true))
+    # shebang check 2
+    (when (and (string/has-prefix? "#!" first-line)
+               (string/find " janet " first-line))
+      (break true))
+    # other checks
+    (when (check-line first-line)
+      (break true))
+    #
+    (var result false)
+    (for i 1 5
+      (def next-result (file/read cf :line))
+      (when (not next-result) (break))
+      (when (check-line (string/trim next-result))
+        (set result true)
+        (break)))
+    #
+    result))
+
+(defn find-target-files
+  [dir ext]
+  (def paths @[])
+  (defn helper
+    [a-dir]
+    (each path (os/dir a-dir)
+      (def sub-path
+        (string a-dir sep path))
+      (case (os/stat sub-path :mode)
+        :directory
+        (when (not= path ".git")
+          (when (not (os/stat (string sub-path sep ".gitrepo")))
+            (helper sub-path)))
+        #
+        :file
+        (when (looks-like-janet sub-path)
+          (array/push paths sub-path)))))
+  (helper dir)
+  paths)
+
 (defn clean-end-of-path
   [path sep]
   (when (one? (length path))
@@ -202,7 +261,7 @@
           (os/exit 1)))
       #
       (= :directory stat)
-      (array/concat src-filepaths (find-files-with-ext apath file-ext))
+      (array/concat src-filepaths (find-target-files apath file-ext))
       #
       (do
         (eprintf "Not an ordinary file or directory: %p" apath)
