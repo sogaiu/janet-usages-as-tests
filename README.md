@@ -2,6 +2,12 @@
 
 Generate and run tests from usage examples
 
+## Status
+
+Currently in transition to using
+[janet-ex-as-tests](https://github.com/sogaiu/janet-ex-as-tests) (a
+successor).
+
 ## Background
 
 It can be useful to record usages (calls):
@@ -77,46 +83,6 @@ Some directories are skipped in this process of searching for usages
 * `.git` directories
 * directories containing a file named `.gitrepo`
 
-### Git Subrepo
-
-0. Ensure [git-subrepo](https://github.com/ingydotnet/git-subrepo) is
-   installed.
-
-1. In the target project, use the `git subrepo clone` command to
-   clone `janet-usages-as-tests` to an appropriate subdirectory of
-   the target project.  For the sake of discussion below, let's
-   say this subdirectory is named `juat`.
-
-2. Copy `juat/make-and-run-juat-tests-subrepo.janet` to the target
-   project's `test` subdirectory.  This file will run via `jpm test`.
-
-3. Edit the just copied `test/make-and-run-juat-tests-subrepo.janet`
-   file so that it:
-
-     * uses `juat/janet-usages-as-tests/make-and-run-tests.janet` [*]
-
-     * specifies files and/or directories that are the target of
-       usages to be treated as tests
-
-Some repositories that use this method include:
-
-* [janet-checksums](https://github.com/sogaiu/janet-checksums "Some
-  digest functions in Janet")
-* [janet-jsonish](https://github.com/sogaiu/janet-jsonish "JSON <-> JDN
-  Converter in Pure Janet")
-* [janet-punyishcode](https://github.com/sogaiu/janet-totp "Punycode
-  decoding / encoding in Janet")
-* [janet-tempdir](https://github.com/sogaiu/janet-tempdir "Some temp
-  dir creation bits for Janet")
-* [janet-totp](https://github.com/sogaiu/janet-totp "TOTP in Janet")
-* [janet-zipper](https://github.com/sogaiu/janet-zipper "Zippers in
-  Janet")
-* [small-peg-tracer](https://github.com/sogaiu/small-peg-tracer
-  "Small Janet PEG tracer")
-
-[*] If you chose a subdirectory name other than `juat`, the path will
-likely need to be edited to match.
-
 ### Copying In-Place
 
 0. Clone this repository somewhere.
@@ -130,28 +96,6 @@ likely need to be edited to match.
 3. Edit `make-and-run-juat-tests.janet` to specify files and/or
    directories that are the target of usages to be treated as tests.
 
-Some repositories that use this method include:
-
-* [ajrepl](https://github.com/sogaiu/ajrepl "Emacs Support for Janet
-  REPL Interaction")
-* [index-janet-source](https://github.com/sogaiu/index-janet-source
-  "Index Janet Source Code")
-* [jandent](https://github.com/sogaiu/jandent "Janet Indenter")
-* [janet-peg](https://github.com/sogaiu/janet-peg "Parse and Generate
-  Janet Source Code")
-* [janet-pegdoc](https://github.com/sogaiu/janet-pegdoc "Janet PEG
-  special doc tool")
-* [janet-ref](https://github.com/sogaiu/janet-ref "Janet Reference
-   Tool")
-* [janet-walk-dir](https://github.com/sogaiu/janet-walk-dir "Walking
-  Directory Trees")
-* [janet-xmlish](https://github.com/sogaiu/janet-xmlish "Hack to Work
-  with Some Amount of XML")
-* [jpm-tasks-view](https://github.com/sogaiu/jpm-tasks-view
-  "View jpm tasks by tag")
-* [margaret](https://github.com/sogaiu/margaret "A Janet
-  implementation of Janet’s peg/match")
-
 ### Git Submodule
 
 1. In place of step 1 above, add this repository as a submodule of a
@@ -163,10 +107,6 @@ Some repositories that use this method include:
 3. Edit `make-and-run-juat-tests-submodule.janet` to specify files
    and/or directories that are the target of usages to be treated as
    tests.
-
-Note that
-[jaylib-wasm-demo](https://github.com/sogaiu/jaylib-wasm-demo) is a
-repository that uses this approach.
 
 ## Writing Tests
 
